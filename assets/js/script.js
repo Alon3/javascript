@@ -1,6 +1,43 @@
 function iniciar() {
   console.log("Programa Iniciado");
 
+  encargado = parseInt(prompt("Ingrese encargado 1 - Ale o 2 - Nico):"));
+  contraseñaencargado1 = "01234";
+  contraseñaencargado2 = "56789";
+
+  switch (encargado) {
+    case 1:
+      console.log("Ha elegido el encargado " + encargado);
+      contraseña = prompt("Ingrese contraseña:");
+      if (contraseña == contraseñaencargado1) {
+        console.log(
+          "Bienvenido Alejandro, puede realizar el arqueo de su caja."
+        );
+        console.log("-------------------------");
+        arqueo();
+      } else {
+        alert("Contraseña incorrecta!");
+        iniciar();
+      }
+      break;
+    case 2:
+      console.log("Ha elegido el encargado " + encargado);
+      contraseña = prompt("Ingrese contraseña:");
+      if (contraseña == contraseñaencargado2) {
+        console.log("Bienvenido Nicolas, puede realizar el arqueo de su caja.");
+        console.log("-------------------------");
+        arqueo();
+      } else {
+        alert("Contraseña incorrecta!");
+        iniciar();
+      }
+      break;
+    default:
+      console.log("No ha elegido ningún encargado");
+  }
+}
+
+function arqueo() {
   do {
     var saldoInicial = parseInt(prompt("Saldo inicial:"));
   } while (isNaN(saldoInicial));
@@ -23,53 +60,6 @@ function iniciar() {
     saldoInicial + deTesoreria + deBanco + totalVentas - controlEfectivo;
 
   console.log(arqueo);
-}
-
-function ventas() {
-  do {
-    var ventaSalon = parseInt(prompt("Ventas SALON:"));
-  } while (isNaN(ventaSalon));
-
-  do {
-    var ventaVereda = parseInt(prompt("Ventas Vereda:"));
-  } while (isNaN(ventaVereda));
-
-  do {
-    var ventaMostrador = parseInt(prompt("Ventas Mostrador"));
-  } while (isNaN(ventaMostrador));
-
-  do {
-    var ventaDelivery = parseInt(prompt("Venta Delivery"));
-  } while (isNaN(ventaDelivery));
-
-  do {
-    var ventaPedidoYa = parseInt(prompt("Venta PedidosYa"));
-  } while (isNaN(ventaPedidoYa));
-
-  do {
-    var descSalonVereda = 0;
-  } while (isNaN(descSalonVereda));
-
-  do {
-    var descDeliveryMostrador = 0;
-  } while (isNaN(descDeliveryMostrador));
-
-  do {
-    var descPedidoYa = 0;
-  } while (isNaN(descPedidoYa));
-
-  var totalVentas =
-    ventaSalon +
-    ventaVereda +
-    ventaMostrador +
-    ventaDelivery +
-    ventaPedidoYa +
-    descSalonVereda +
-    descDeliveryMostrador +
-    descPedidoYa;
-
-  console.log(totalVentas);
-  return totalVentas;
 }
 
 function billetes() {
@@ -155,4 +145,50 @@ function billetes() {
 
   console.log("total efectivo " + controlEfectivo);
   return controlEfectivo;
+}
+function ventas() {
+  do {
+    var ventaSalon = parseInt(prompt("Ventas SALON:"));
+  } while (isNaN(ventaSalon));
+
+  do {
+    var ventaVereda = parseInt(prompt("Ventas Vereda:"));
+  } while (isNaN(ventaVereda));
+
+  do {
+    var ventaMostrador = parseInt(prompt("Ventas Mostrador"));
+  } while (isNaN(ventaMostrador));
+
+  do {
+    var ventaDelivery = parseInt(prompt("Venta Delivery"));
+  } while (isNaN(ventaDelivery));
+
+  do {
+    var ventaPedidoYa = parseInt(prompt("Venta PedidosYa"));
+  } while (isNaN(ventaPedidoYa));
+
+  do {
+    var descSalonVereda = 0;
+  } while (isNaN(descSalonVereda));
+
+  do {
+    var descDeliveryMostrador = 0;
+  } while (isNaN(descDeliveryMostrador));
+
+  do {
+    var descPedidoYa = 0;
+  } while (isNaN(descPedidoYa));
+
+  var totalVentas =
+    ventaSalon +
+    ventaVereda +
+    ventaMostrador +
+    ventaDelivery +
+    ventaPedidoYa +
+    descSalonVereda +
+    descDeliveryMostrador +
+    descPedidoYa;
+
+  console.log(totalVentas);
+  return totalVentas;
 }
