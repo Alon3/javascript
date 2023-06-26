@@ -1,32 +1,36 @@
 function iniciar() {
   console.log("Programa Iniciado");
 
-  encargado = parseInt(prompt("Ingrese encargado 1 - Ale o 2 - Nico):"));
+  encargadoID = parseInt(prompt("Ingrese encargado 1 - Ale o 2 - Nico):"));
   contraseñaencargado1 = "01234";
   contraseñaencargado2 = "56789";
 
-  switch (encargado) {
+  switch (encargadoID) {
     case 1:
-      console.log("Ha elegido el encargado " + encargado);
+      console.log("Ha elegido el encargado " + encargadoID);
+      var encargado = "Alejandro";
       contraseña = prompt("Ingrese contraseña:");
       if (contraseña == contraseñaencargado1) {
         console.log(
           "Bienvenido Alejandro, puede realizar el arqueo de su caja."
         );
         console.log("-------------------------");
-        arqueo();
+        var horaInicio = new Date();
+        arqueo(encargado, horaInicio);
       } else {
         alert("Contraseña incorrecta!");
         iniciar();
       }
       break;
     case 2:
-      console.log("Ha elegido el encargado " + encargado);
+      console.log("Ha elegido el encargado " + encargadoID);
       contraseña = prompt("Ingrese contraseña:");
       if (contraseña == contraseñaencargado2) {
         console.log("Bienvenido Nicolas, puede realizar el arqueo de su caja.");
+        var encargado = "Nicolas";
         console.log("-------------------------");
-        arqueo();
+        arqueo(encargado, horaInicio);
+        var horaInicio = new Date();
       } else {
         alert("Contraseña incorrecta!");
         iniciar();
@@ -37,7 +41,7 @@ function iniciar() {
   }
 }
 
-function arqueo() {
+function arqueo(encargado, horaInicio) {
   do {
     var saldoInicial = parseInt(prompt("Saldo inicial:"));
   } while (isNaN(saldoInicial));
@@ -56,10 +60,37 @@ function arqueo() {
   totalVentas = ventas();
   controlEfectivo = billetes();
 
-  var arqueo =
-    saldoInicial + deTesoreria + deBanco + totalVentas - controlEfectivo;
+  var horaFinal = new Date();
 
-  console.log(arqueo);
+  var arqueo =
+    controlEfectivo - saldoInicial - deTesoreria - deBanco - totalVentas;
+
+  if (controlEfectivo === 0) {
+    console.log("El resultado de su arqueo de: 0" + arqueo);
+  } else if (controlEfectivo <= 0) {
+    console.log("El resultado de su arqueo de: mayor a 0" + arqueo);
+  } else {
+    console.log("El resultado de su arqueo de: menor a 0" + arqueo);
+
+    reiniciar = parseInt(
+      prompt("Su saldo fue negativo, deseea rehacer su arqueo? 1 - SI , 2 - NO")
+    );
+
+    if (reiniciar === 1) {
+      iniciar();
+    } else {
+      console.log("Caja finalizada");
+    }
+
+    console.log(
+      "El encargado " +
+        encargado +
+        " ha iniciado su arqueo a las " +
+        horaInicio +
+        " y finalizo a las: " +
+        horaFinal
+    );
+  }
 }
 
 function billetes() {
