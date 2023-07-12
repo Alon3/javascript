@@ -67,7 +67,7 @@ function arqueo(encargado, horaInicio) {
 
   if (controlEfectivo === 0) {
     console.log("El resultado de su arqueo de: 0" + arqueo);
-  } else if (controlEfectivo <= 0) {
+  } else if (controlEfectivo >= 0) {
     console.log("El resultado de su arqueo de: mayor a 0" + arqueo);
   } else {
     console.log("El resultado de su arqueo de: menor a 0" + arqueo);
