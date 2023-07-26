@@ -1,8 +1,9 @@
-function iniciar() {
+function login() {
   console.log("Programa Iniciado");
   mostrarMensaje("Programa Iniciado");
 
   var encargadoID = parseInt(document.getElementById("encargadoInput").value);
+  console.log(encargadoID);
   var contraseñaencargado1 = "01234";
   var contraseñaencargado2 = "56789";
 

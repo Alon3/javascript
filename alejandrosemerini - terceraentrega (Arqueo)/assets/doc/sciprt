@@ -1,0 +1,5 @@
+<script src="./assets/js/arqueo.js"></script>
+<script src="./assets/js/billetes.js"></script>
+<script src="./assets/js/iniciar.js"></script>
+<script src="./assets/js/mostrarMensaje.js"></script>
+<script src="./assets/js/ventas.js"></script>

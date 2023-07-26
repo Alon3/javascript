@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="mb-4">Arqueo de Caja</h2>
+      <form id="arqueoForm" class="mb-4">
+        <div class="form-group">
+          <label for="encargadoSelect">Seleccionar Encargado:</label>
+          <select class="form-control" id="encargadoInput">
+            <option value="1">Alejandro</option>
+            <option value="2">Nicolas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contraseñaInput">Contraseña:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="contraseñaInput"
+            placeholder="Contraseña"
+          />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="login()">
+          Iniciar Arqueo
+        </button>
+      </form>
+      <div id="resultado"></div>
+    </div>
+
+    <script src="./assets/js/arqueo.js"></script>
+    <script src="./assets/js/billetes.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/mostrarMensaje.js"></script>
+    <script src="./assets/js/ventas.js"></script>
+  </body>
+</html>
