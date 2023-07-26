@@ -31,9 +31,41 @@
           />
         </div>
         <button type="button" class="btn btn-primary" onclick="login()">
-          Iniciar Arqueo
+          Iniciar Sesión
         </button>
       </form>
+
+      <form id="arqueoForm" class="mb-4">
+        <!-- Campos de entrada para el arqueo -->
+        <div class="form-group">
+          <label for="saldoInicialInput">Saldo Inicial:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="saldoInicialInput"
+            placeholder="Saldo Inicial"
+          />
+        </div>
+        <div class="form-group">
+          <label for="deTesoreriaInput">De Tesorería:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="deTesoreriaInput"
+            placeholder="De Tesorería"
+          />
+        </div>
+        <div class="form-group">
+          <label for="deBancoInput">De Banco:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="deBancoInput"
+            placeholder="De Banco"
+          />
+        </div>
+      </form>
+
       <div id="resultado"></div>
     </div>
 
