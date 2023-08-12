@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div id="loginSection">
+        <h2 class="mb-4">Arqueo de Caja</h2>
+        <form id="arqueoForm" class="mb-4">
+          <div class="form-group">
+            <label for="encargadoInput">Seleccionar Encargado:</label>
+            <select class="form-control" id="encargadoInput">
+              <option value="Alejandro">Alejandro</option>
+              <option value="Nicolas">Nicolas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contraseñaInput">Contraseña:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="contraseñaInput"
+              placeholder="Contraseña"
+              required
+            />
+            <small id="contraseñaError" class="text-danger"></small>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="login()">
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="mostrarHistorial()"
+          >
+            Ver Historial de Arqueos
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger ml-2"
+            onclick="eliminarHistorialPrompt()"
+          >
+            Eliminar Historial
+          </button>
+        </form>
+      </div>
+
+      <div id="arqueoSection" class="hidden">
+        <form id="arqueoForm" class="mb-4">
+          <h4>Arqueo Inicial</h4>
+          <p>Ingrese los saldos del turno:</p>
+          <div class="form-group">
+            <label for="saldoInicialInput">Saldo Inicial:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="saldoInicialInput"
+              placeholder="Saldo Inicial"
+            />
+          </div>
+          <div class="form-group">
+            <label for="deTesoreriaInput">De Tesorería:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="deTesoreriaInput"
+              placeholder="De Tesorería"
+            />
+          </div>
+          <div class="form-group">
+            <label for="deBancoInput">De Banco:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="deBancoInput"
+              placeholder="De Banco"
+            />
+          </div>
+        </form>
+
+        <form id="ventasForm" class="mb-4">
+          <h4>Arqueo de Ventas</h4>
+          <p>Ingrese las ventas del turno:</p>
+          <div class="form-group">
+            <label for="ventaSalon">Venta Salón</label>
+            <input
+              type="number"
+              class="form-control"
+              id="ventaSalon"
+              placeholder="Ventas de Salón"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ventaVereda">Venta Vereda</label>
+            <input
+              type="number"
+              class="form-control"
+              id="ventaVereda"
+              placeholder="Ventas de Vereda"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ventaDelivery">Venta Delivery</label>
+            <input
+              type="number"
+              class="form-control"
+              id="ventaDelivery"
+              placeholder="Ventas de Delivery"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ventaMostrador">Venta Mostrador</label>
+            <input
+              type="number"
+              class="form-control"
+              id="ventaMostrador"
+              placeholder="Ventas de Mostrador"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ventaPedidosYa">Venta PedidosYa</label>
+            <input
+              type="number"
+              class="form-control"
+              id="ventaPedidosYa"
+              placeholder="Ventas de PedidosYa"
+            />
+          </div>
+          <div class="form-group">
+            <label for="descuentosVenta">Descuentos</label>
+            <input
+              type="number"
+              class="form-control"
+              id="descuentosVenta"
+              placeholder="Descuentos"
+            />
+          </div>
+        </form>
+
+        <form id="billetesForm" class="mb-4">
+          <h4>Arqueo de Billetes</h4>
+          <p>Ingrese la cantidad de billetes de cada denominación:</p>
+          <div class="form-group">
+            <label for="billete1">Billetes de 1:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete1"
+              placeholder="Cantidad de billetes de 1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete2">Billetes de 2:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete2"
+              placeholder="Cantidad de billetes de 2"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete5">Billetes de 5:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete5"
+              placeholder="Cantidad de billetes de 5"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete10">Billetes de 10:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete10"
+              placeholder="Cantidad de billetes de 10"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete20">Billetes de 20:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete20"
+              placeholder="Cantidad de billetes de 20"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete50">Billetes de 50:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete50"
+              placeholder="Cantidad de billetes de 50"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete100">Billetes de 100:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete100"
+              placeholder="Cantidad de billetes de 100"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete200">Billetes de 200:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete200"
+              placeholder="Cantidad de billetes de 200"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete500">Billetes de 500:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete500"
+              placeholder="Cantidad de billetes de 500"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete1000">Billetes de 1000:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete1000"
+              placeholder="Cantidad de billetes de 1000"
+            />
+          </div>
+          <div class="form-group">
+            <label for="billete2000">Billetes de 2000:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="billete2000"
+              placeholder="Cantidad de billetes de 2000"
+            />
+          </div>
+          <button type="button" class="btn btn-primary" onclick="arqueo()">
+            Realizar arqueo
+          </button>
+        </form>
+
+        <div id="resultado"></div>
+      </div>
+
+      <div id="historialArqueosSection" class="mt-5">
+        <ul id="historialArqueosList" class="list-group"></ul>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
